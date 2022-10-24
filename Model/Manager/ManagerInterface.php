@@ -18,6 +18,4 @@ interface ManagerInterface {
 
     public function findOneById($id);
 
-
-
 }

@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+}
+
+div {
+    width: 90%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 20px;
+    align-items: center;
+}
+
+/* td {
+
+} */

@@ -4,6 +4,7 @@ namespace Controller;
 use Model\Manager\CategorieManager;
 
 class categorieController {
+    
     private $manager;
 
     public function __construct()

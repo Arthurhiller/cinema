@@ -1,7 +1,8 @@
 <?php
 /**
  * Définition ob_start()
- * 
+ * "Demare la temporisation de sortie"
+ * Empêche les données de transiter par l'URL
  */
 ob_start();
 ?>
@@ -24,7 +25,7 @@ foreach($stmtAllFilms->fetchall() as $film): ?>
         </tr>
     </thead>
     <tbody>
-        <td><?=$film['id_film']?></td>
+        <td><a href="index.php?action=unFilm&id=<?= $film['id_film'] ?>">Ici</td>
         <td><?=$film['titre']?></td>
         <td><?=$film['date_sortie']?></td>
         <td><?=$film['synopsis']?></td>
@@ -32,13 +33,13 @@ foreach($stmtAllFilms->fetchall() as $film): ?>
     </tbody>
 </table>
 <?php
-
 endforeach;
-
-
-
 ?>
 <?php
+/**
+ * Définition : ob_get_clean
+ * Permet de lire le contenue du tampon de sortie courrant puis l'efface. 
+ */
 $contenu = ob_get_clean();
 require "./view/template.php";
 ?>

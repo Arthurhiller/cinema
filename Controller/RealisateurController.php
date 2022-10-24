@@ -18,4 +18,6 @@ class RealisateurController {
 
         require "view/list/realisateurs.php";
     }
+
+    
 }

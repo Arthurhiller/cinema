@@ -28,4 +28,10 @@ class FilmController {
 
         require "view/list/films.php";
     }
+
+    public function unFilm($id) {
+
+        $stmtOneFilm = $this->manager->findOneById($id);
+        require "view/list/film.php";
+    }
 }

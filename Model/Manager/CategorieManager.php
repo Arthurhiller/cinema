@@ -19,4 +19,5 @@ class CategorieManager extends AbstractManager implements ManagerInterface {
         $stmt = $this->executeRequest($sql, ['id' => $id]);
         return $stmt;
     }
+    
 }

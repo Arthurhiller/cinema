@@ -20,7 +20,9 @@ $ctrlCategories = new categorieController();
 $ctrlActeurs = new ActeurController();
 $ctrlRoles = new RoleController();
 $ctrlCasting = new CastingController();
-// var_dump($ctrlFilm);
+
+
+//  var_dump($ctrlActeurs(ListActeursRoles(17)));
 
 
 if(isset($_GET['action'])) {
@@ -31,15 +33,20 @@ if(isset($_GET['action'])) {
     switch($_GET['action']) {
         case 'films': $ctrlFilm->listFilm();
         break;
+        case 'unFilm' : $ctrlFilm->unFilm($id);
+        break;
         case 'realisateurs': $ctrlRealisateur->listRealisateur();
         break;
         case 'categories': $ctrlCategories->listCategories();
         break;
         case 'acteurs' :  $ctrlActeurs->listActeurs();
         break;
+        // case 'acteursRole': $ctrlActeurs->ListActeursRoles($id);
+        break;
         case 'roles' : $ctrlRoles->listRoles();
         break;
         case 'castings' : $ctrlCasting->listCasting();
+        break;
     }
 
     
