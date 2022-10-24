@@ -19,5 +19,9 @@ class RealisateurController {
         require "view/list/realisateurs.php";
     }
 
-    
+    public function unRealisateur($id) {
+        
+        $stmtRealisateur = $this->manager->findOneById($id);
+        require "view/list/realisateur.php";
+    }
 }

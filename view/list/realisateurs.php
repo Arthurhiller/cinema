@@ -5,7 +5,6 @@ ob_start();
 <h2>Tous les réalisateurs</h2>
 
 <?php
-
 foreach($stmtRealisateurs->fetchall() as $realisateur): ?>
     <table>
         <thead>
@@ -18,7 +17,7 @@ foreach($stmtRealisateurs->fetchall() as $realisateur): ?>
             </tr>
         </thead>
         <tbody>
-            <td><?=$realisateur['id_realisateur']?></td>
+            <td><a href="index.php?action=unRealisateur&id=<?= $realisateur['id_realisateur'] ?>">ICI</a></td>
             <td><?=$realisateur['nom']?></td>
             <td><?=$realisateur['prenom']?></td>
             <td><?=$realisateur['sexe']?></td>

@@ -37,6 +37,8 @@ if(isset($_GET['action'])) {
         break;
         case 'realisateurs': $ctrlRealisateur->listRealisateur();
         break;
+        case 'unRealisateur' : $ctrlRealisateur->unRealisateur($id);
+        break;
         case 'categories': $ctrlCategories->listCategories();
         break;
         case 'acteurs' :  $ctrlActeurs->listActeurs();
