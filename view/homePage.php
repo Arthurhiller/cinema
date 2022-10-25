@@ -12,9 +12,9 @@
     <li class="nav-item">
         <a class="nav-link active" href="index.php?action=acteurs">Acteurs</a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link active" href="index.php?action=acteursRole&id=">Test</a>
-    </li>
+    </li> -->
     <li class="nav-item">
         <a class="nav-link active" href="index.php?action=roles">Role</a>
     </li>
