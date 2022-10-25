@@ -29,24 +29,34 @@ if(isset($_GET['action'])) {
     if(isset($_GET['id'])) {
         $id = $_GET['id'];
     }
-
     switch($_GET['action']) {
+        // Affichage de tous les films.
         case 'films': $ctrlFilm->listFilm();
         break;
+        // Affichage d'un seul film.
         case 'unFilm' : $ctrlFilm->unFilm($id);
         break;
+        // Affichage de tous les réalisateurs.
         case 'realisateurs': $ctrlRealisateur->listRealisateur();
         break;
+        // Affichage d'un seul réalisateur.
         case 'unRealisateur' : $ctrlRealisateur->unRealisateur($id);
         break;
+        // Affichage de toutes les catégories.
         case 'categories': $ctrlCategories->listCategories();
         break;
+        // Affichage de tous les acteurs.
         case 'acteurs' :  $ctrlActeurs->listActeurs();
+        break;
+        //Affichage d'un seul acteur.
+        case 'unActeur' : $ctrlActeurs->listActeur($id);
         break;
         // case 'acteursRole': $ctrlActeurs->ListActeursRoles($id);
         break;
+        // Affichage de tous les roles.
         case 'roles' : $ctrlRoles->listRoles();
         break;
+        // Affichage de tous les casting.
         case 'castings' : $ctrlCasting->listCasting();
         break;
     }
@@ -57,5 +67,6 @@ if(isset($_GET['action'])) {
 
 
 }else{
+    // Si le case ne ce charge pas on retourne sur la homePage.
     return $ctrlHome->homePage();
 }

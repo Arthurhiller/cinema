@@ -9,7 +9,7 @@ class ActeurController {
 
     //  $role;
 
-     public $role;
+    //  public $role;
 
     public function __construct()
     {
@@ -23,12 +23,10 @@ class ActeurController {
     }
 
 
-    // public function ListActeursRoles($id) {
-        
-    //     $stmtListActeurRoles = $this->acteursRole($id);
-    //     require "view/list/acteursRoles.php";
-    // }
+    public function listActeur($id) {
 
-
+        $stmtListActeur = $this->manager->findOneById($id);
+        require "view/list/acteur.php";
+    }
 
 }

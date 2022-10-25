@@ -1,5 +1,5 @@
 <?php
-ob_start()
+ob_start();
 ?>
 
 <h2>Acteurs</h2>
@@ -9,24 +9,23 @@ foreach($stmtListActeurs->fetchall() as $acteur): ?>
     <thead>
         <tr>
             <th>ID</th>
-            <th>nom</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Sexe</th>
+            <th>Date de naissance</th>
         </tr>
     </thead>
     <tbody>
-        <td><?= $acteur['id_acteur'] ?></td>
+        <td><a href="index.php?action=unActeur&id=<?= $acteur['id_acteur'] ?>">ICI</a></td>
         <td><?= $acteur['nom'] ?></td>
+        <td><?= $acteur['prenom'] ?></td>
+        <td><?= $acteur['sexe'] ?></td>
+        <td><?= $acteur['date_naissance'] ?></td>
     </tbody>
 </table>
 <?php
 endforeach;
 ?>
-
-
-
-
-
-
-
 
 
 <?php
