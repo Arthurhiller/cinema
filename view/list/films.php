@@ -9,32 +9,22 @@ ob_start();
 
 <h2>Liste des films</h2>
 
-<?php
-// foreach($request as $info)
-// var_dump($stmtAllFilms);
 
-foreach($stmtAllFilms->fetchall() as $film): ?>
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Titre</th>
-            <th>Date de sortie</th>
-            <th>Synopsis</th>
-            <th>Durée</th>
-        </tr>
-    </thead>
-    <tbody>
-        <td><a href="index.php?action=unFilm&id=<?= $film['id_film'] ?>">Ici</td>
-        <td><?=$film['titre']?></td>
-        <td><?=$film['date_sortie']?></td>
-        <td><?=$film['synopsis']?></td>
-        <td><?=$film['duree']?></td>
-    </tbody>
-</table>
-<?php
-endforeach;
-?>
+<div class="row">
+<?php foreach($stmtAllFilms->fetchall() as $film): ?>
+    <div class="flex-wrap">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-muted text-truncate"><?= $film['titre'] ?></h5>
+                <p class="card-text text-muted text-truncate"><?= $film['synopsis'] ?></p>
+                <a href="index.php?action=unFilm&id=<?= $film['id_film'] ?>" class="btn btn-primary">Voir le film</a>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+</div>
+
+
 <?php
 /**
  * Définition : ob_get_clean
