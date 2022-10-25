@@ -19,21 +19,11 @@ foreach($stmtOneFilm->fetchall() as $unFilm): ?>
         <td><?= $unFilm['date_sortie'] ?></td>
         <td><?= $unFilm['synopsis'] ?></td>
         <td><?= $unFilm['duree'] ?></td>
-
     </tbody>
 </table>
 <?php
 endforeach;
 ?>
-
-
-
-
-
-
-
-
-
 
 
 <?php
