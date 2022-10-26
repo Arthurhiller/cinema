@@ -16,7 +16,7 @@ ob_start();
                     <p>Le sexe est : <?= $realisateur['sexe'] ?></p>
                     <p>La date de naissance : <?= $realisateur['date_naissance'] ?></p>
                 </p>
-                <a href="index.php?action=unRealisateur&id=<?= $realisateur['id_realisateur'] ?>" class="btn btn-primary">Détail</a>
+                <a href="index.php?action=realisateurFilm&id=<?= $realisateur['id_realisateur'] ?>" class="btn btn-primary">Filmographie</a>
             </div>
         </div>
     </div>
