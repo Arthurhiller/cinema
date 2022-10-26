@@ -1,28 +1,20 @@
 <?php
 ob_start()
 ?>
-<?php
-foreach($stmt->fetchAll() as $acteurRole): ?>
-
-<table>
-    <thead>
-        <tr>
-            <th>Nom</th>
-            <th>prenom</th>
-            <th>sexe</th>
-            <th>date_naissance</th>
-        </tr>
-    </thead>
-    <tbody>
-        <td><?= $acteurRole['nom'] ?></td>
-        <td><?= $acteurRole['prenom'] ?></td>
-        <td><?= $acteurRole['sexe'] ?></td>
-        <td><?= $acteurRole['date_naissance'] ?></td>
-    </tbody>
-</table>
-<?php
-endforeach;
-?>
+<div class="row">
+    <div class="flex-wrap">
+    <?php foreach($stmt->fetchAll() as $acteurRole): ?>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h4 class="card-title"><?= $acteurRole['nom'] ?></h4>
+                <h5 class="card-subtitle"><?= $acteurRole['prenom'] ?></h5>
+                <p class="card-text">Le sexe de l'acteur est : <?= $acteurRole['sexe'] ?></p>
+                <p class="card-text">La date de naissance de l'acteur est : <?= $acteurRole['date_naissance'] ?></p>
+            </div>
+        </div>   
+    </div>
+    <?php endforeach; ?>
+</div>
 
 
 
