@@ -4,23 +4,14 @@ ob_start();
 
 <h2>Catégories</h2>
 
-<?php
-foreach($stmtAllCategories->fetchall() as $categorie): ?>
-<table>
-    <thead>
-        <tr>
-            <td>ID</td>
-            <td>nom</td>
-        </tr>
-    </thead>
-    <tbody>
-        <td><?= $categorie['id_categorie'] ?></td>
-        <td><?= $categorie['nom'] ?></td>
-    </tbody>
-</table>
-<?php
-endforeach;
-?>
+<div class="row">
+    <?php foreach($stmtAllCategories->fetchall() as $categorie): ?>
+    <div class="flex-wrap">
+        <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"><?= $categorie['nom'] ?></a>
+    </div>
+    <?php endforeach; ?>
+</div>
+
 
 <?php
 $contenu = ob_get_clean();
