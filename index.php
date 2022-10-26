@@ -54,6 +54,8 @@ if(isset($_GET['action'])) {
         //Affichage d'un seul acteur.
         case 'unActeur' : $ctrlActeurs->listActeur($id);
         break;
+        case 'acteurFilm' : $ctrlActeurs->acteurFilm($id);
+        break;
         // Affichage d'un acteur est de son rôle
         case 'acteurRole' : $ctrlRoles->listActeurRole($id);
         break;

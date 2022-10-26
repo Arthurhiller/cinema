@@ -29,4 +29,5 @@ class RealisateurManager extends AbstractManager implements ManagerInterface {
         return $stmt;
     }
 
+    
 }
