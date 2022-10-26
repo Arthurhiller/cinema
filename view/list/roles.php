@@ -4,23 +4,19 @@ ob_start();
 
 <h2>Role</h2>
 
-<?php
-foreach($stmtListRoles->fetchall() as $role): ?>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>nom</th>
-    </tr>
-    </thead>
-    <tbody>
-        <td><?= $role['id_role'] ?></td>
-        <td><?= $role['nom'] ?></td>
-    </tbody>
-</table>
-<?php
-endforeach;
-?>
+
+<div class="row">
+    <?php foreach($stmtListRoles->fetchall() as $role): ?>
+    <div class="flex-wrap">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h4 class="card-title"><?= $role['nom'] ?></h4>
+                <a href="#" class="btn btn-primary">Detail</a>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+</div>
 
 
 
