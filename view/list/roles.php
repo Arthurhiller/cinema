@@ -11,7 +11,7 @@ ob_start();
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <h4 class="card-title"><?= $role['nom'] ?></h4>
-                <a href="#" class="btn btn-primary">Detail</a>
+                <a href="index.php?action=acteurRole&id=<?= $role['id_role'] ?>" class="btn btn-primary">Detail</a>
             </div>
         </div>
     </div>

@@ -20,4 +20,6 @@ class CinemaManager extends AbstractManager implements ManagerInterface {
         $stmt = $this->executeRequest($sql, ['id' => $id ]);
         return $stmt;
     }
+
+
 }

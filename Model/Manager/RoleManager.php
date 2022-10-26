@@ -18,4 +18,17 @@ class RoleManager extends AbstractManager implements ManagerInterface {
         $stmt = $this->executeRequest($sql, ['id' => $id]);
         return $stmt;
     }
+
+    // public function listActeurRole($id)
+    // {  
+    //     $sql = "SELECT a.nom
+    //             FROM role r
+    //             INNER JOIN casting c
+    //             ON r.id_role = c.id_role
+    //             INNER JOIN acteur a
+    //             ON a.id_acteur = c.id_acteur
+    //             WHERE r.id_role = :c.id_role";
+    //     $stmt = $this->executeRequest($sql, ['c.id_role' => $id]);
+    //     return $stmt;
+    // }
 }
