@@ -42,6 +42,9 @@ if(isset($_GET['action'])) {
         // Affichage d'un seul réalisateur.
         case 'unRealisateur' : $ctrlRealisateur->unRealisateur($id);
         break;
+        // Affichage de tous les films d'un réalisateur.
+        case 'realisateurFilm': $ctrlRealisateur->realisateurFilm($id);
+        break;
         // Affichage de toutes les catégories.
         case 'categories': $ctrlCategories->listCategories();
         break;
@@ -56,7 +59,7 @@ if(isset($_GET['action'])) {
         break;
         case 'acteurFilm' : $ctrlActeurs->acteurFilm($id);
         break;
-        // Affichage d'un acteur est de son rôle
+        // Affichage d'un acteur est de son rôle.
         case 'acteurRole' : $ctrlRoles->listActeurRole($id);
         break;
         // case 'acteursRole': $ctrlActeurs->ListActeursRoles($id);
