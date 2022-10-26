@@ -2,7 +2,7 @@
 ob_start();
 ?>
 
-<h2>Tous les réalisateurs</h2>
+<h2>Liste de tous les réalisateurs</h2>
 
 
 <div class="row">
