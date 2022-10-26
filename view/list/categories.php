@@ -2,7 +2,7 @@
 ob_start();
 ?>
 
-<h2>Catégories</h2>
+<h2>Liste de toutes les catégories</h2>
 
 <div class="row">
     <?php foreach($stmtAllCategories->fetchAll() as $categorie): ?>
