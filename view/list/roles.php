@@ -2,7 +2,7 @@
 ob_start();
 ?>
 
-<h2>Role</h2>
+<h2>Liste de tous les rôles</h2>
 
 
 <div class="row">
