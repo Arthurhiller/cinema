@@ -7,7 +7,7 @@ ob_start();
 <div class="row">
     <?php foreach($stmtAllCategories->fetchAll() as $categorie): ?>
     <div class="flex-wrap">
-        <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"><?= $categorie['nom'] ?></a>
+        <a href="index.php?action=categorieFilm&id=<?= $categorie['id_categorie'] ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"><?= $categorie['nom'] ?></a>
     </div>
     <?php endforeach; ?>
 </div>
