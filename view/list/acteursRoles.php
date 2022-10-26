@@ -2,7 +2,7 @@
 ob_start()
 ?>
 <?php
-foreach($stmtListActeurRoles->fetchall() as $acteurRole): ?>
+foreach($stmtListActeurRoles->fetchAll() as $acteurRole): ?>
 <table>
     <thead>
     <tr>

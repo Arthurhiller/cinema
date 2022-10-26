@@ -5,7 +5,7 @@ ob_start();
 <h2>Catégories</h2>
 
 <div class="row">
-    <?php foreach($stmtAllCategories->fetchall() as $categorie): ?>
+    <?php foreach($stmtAllCategories->fetchAll() as $categorie): ?>
     <div class="flex-wrap">
         <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"><?= $categorie['nom'] ?></a>
     </div>

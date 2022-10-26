@@ -6,7 +6,7 @@ ob_start();
 
 
 <div class="row">
-    <?php foreach($stmtListRoles->fetchall() as $role): ?>
+    <?php foreach($stmtListRoles->fetchAll() as $role): ?>
     <div class="flex-wrap">
         <div class="card" style="width: 18rem;">
             <div class="card-body">

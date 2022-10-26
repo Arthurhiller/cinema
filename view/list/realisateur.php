@@ -3,7 +3,7 @@ ob_start();
 ?>
 
 <?php
-foreach($stmtRealisateur->fetchall() as $unRealisateur): ?>
+foreach($stmtRealisateur->fetchAll() as $unRealisateur): ?>
 <table>
     <thead>
         <tr>

@@ -11,7 +11,7 @@ ob_start();
 
 
 <div class="row">
-<?php foreach($stmtAllFilms->fetchall() as $film): ?>
+<?php foreach($stmtAllFilms->fetchAll() as $film): ?>
     <div class="flex-wrap">
         <div class="card" style="width: 18rem;">
             <div class="card-body">

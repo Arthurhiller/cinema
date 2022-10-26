@@ -14,7 +14,7 @@ class ActeurManager extends AbstractManager implements ManagerInterface {
 
     public function findOneById($id)
     {
-        $sql = "SELECT * FROM acteur WHERE id = :id";
+        $sql = "SELECT * FROM acteur WHERE id_acteur = :id";
         $stmt = $this->executeRequest($sql, ['id' => $id]);
         return $stmt;
     }

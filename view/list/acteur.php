@@ -2,9 +2,9 @@
 ob_start();
 ?>
 
-<p>test</p>
+
 <?php
-foreach($stmtListActeur->fetchall() as $unActeur): ?>
+foreach($stmtListActeur->fetchAll() as $unActeur): ?>
 <table>
     <thead>
         <tr>

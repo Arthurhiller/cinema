@@ -4,7 +4,7 @@ ob_start();
 
 
 <?php 
-foreach($stmtOneFilm->fetchall() as $unFilm): ?>
+foreach($stmtOneFilm->fetchAll() as $unFilm): ?>
 <table>
     <thead>
         <tr>

@@ -4,7 +4,7 @@ ob_start();
 
 <h2>Tous les acteurs</h2>
 <div class="row">
-    <?php foreach($stmtListActeurs->fetchall() as $acteur): ?>
+    <?php foreach($stmtListActeurs->fetchAll() as $acteur): ?>
     <div class="flex-wrap">
         <div class="card" style="width: 18rem;">
             <div class="card-body">

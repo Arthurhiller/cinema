@@ -6,7 +6,7 @@ ob_start();
 
 
 <div class="row">
-    <?php foreach($stmtRealisateurs->fetchall() as $realisateur): ?>
+    <?php foreach($stmtRealisateurs->fetchAll() as $realisateur): ?>
     <div class="flex-wrap">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
