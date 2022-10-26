@@ -18,6 +18,7 @@ ob_start();
                 <h5 class="card-title text-muted text-truncate"><?= $film['titre'] ?></h5>
                 <p class="card-text text-muted text-truncate"><?= $film['synopsis'] ?></p>
                 <a href="index.php?action=unFilm&id=<?= $film['id_film'] ?>" class="btn btn-primary">Voir le film</a>
+                <a href="index.php?action=castingFilm&id=<?= $film['id_film'] ?>" class="btn btn-primary">Voir le film</a>
             </div>
         </div>
     </div>

@@ -62,6 +62,9 @@ if(isset($_GET['action'])) {
         // Affichage de tous les casting.
         case 'castings' : $ctrlCasting->listCasting();
         break;
+        // Affichage de tous les acteurs ainsi que leur rôle dans un film.
+        case 'castingFilm' : $ctrlCasting->listCastingFilm($id);
+        break;
     }
 
     
