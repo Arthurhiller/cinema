@@ -12,12 +12,6 @@ class CastingController {
         $this->manager = new CastingManager();
     }
 
-    public function listCasting() {
-
-        $stmtListCasting = $this->manager->findAll();
-        require "view/list/casting.php";
-    }
-
     public function listCastingFilm($id)
     {
         $sql = Connect::seConnecter();
@@ -28,6 +22,6 @@ class CastingController {
                             INNER JOIN role r
                             ON r.id_role = c.id_role
                             WHERE id_film = $id");
-        require "view/list/filmCasting.php";
+        require "view/list/casting/filmCasting.php";
     }
 }

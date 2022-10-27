@@ -26,12 +26,7 @@ class FilmController {
         // bindparam : lie les données récuperer dans la bdd à variables, transmet et reçois la valeur de sortie.
         $stmtAllFilms = $this->manager->findAll();
 
-        require "view/list/films.php";
+        require "view/list/film/films.php";
     }
-
-    public function unFilm($id) {
-
-        $stmtOneFilm = $this->manager->findOneById($id);
-        require "view/list/film.php";
-    }
+    
 }

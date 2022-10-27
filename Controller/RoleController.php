@@ -16,7 +16,7 @@ class RoleController {
     public function listRoles() {
 
         $stmtListRoles = $this->manager->findAll();
-        require "view/list/roles.php";
+        require "view/list/role/roles.php";
     }
 
     public function listActeurRole($id)
@@ -29,7 +29,7 @@ class RoleController {
         INNER JOIN acteur a
         ON a.id_acteur = c.id_acteur
         WHERE r.id_role = $id");
-        require "view/list/acteursRoles.php";
+        require "view/list/role/acteursRoles.php";
     }
 
     // public function acteurRole($id) {

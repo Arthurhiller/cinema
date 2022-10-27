@@ -4,6 +4,7 @@ ob_start();
 
 <h2>Liste de tous les réalisateurs</h2>
 
+<a href="index.php?action=ajouterRealisateur">Ajouter un realisateur</a>
 
 <div class="row">
     <?php foreach($stmtRealisateurs->fetchAll() as $realisateur): ?>

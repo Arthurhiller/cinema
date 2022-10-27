@@ -20,14 +20,7 @@ class ActeurController {
     public function listActeurs() {
 
         $stmtListActeurs = $this->manager->findAll();
-        require "view/list/acteurs.php";
-    }
-
-
-    public function listActeur($id) {
-
-        $stmtListActeur = $this->manager->findOneById($id);
-        require "view/list/acteur.php";
+        require "view/list/acteur/acteurs.php";
     }
 
     public function acteurFilm($id) {
@@ -40,7 +33,7 @@ class ActeurController {
                             INNER JOIN film f
                             ON c.id_film = f.id_film
                             WHERE a.id_acteur = $id");
-        require "view/list/acteurFilm.php";
+        require "view/list/acteur/acteurFilm.php";
     }
 
 }

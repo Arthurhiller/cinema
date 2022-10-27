@@ -33,17 +33,16 @@ if(isset($_GET['action'])) {
         // Affichage de tous les films.
         case 'films': $ctrlFilm->listFilm();
         break;
-        // Affichage d'un seul film.
-        case 'unFilm' : $ctrlFilm->unFilm($id);
-        break;
         // Affichage de tous les réalisateurs.
         case 'realisateurs': $ctrlRealisateur->listRealisateur();
         break;
-        // Affichage d'un seul réalisateur.
-        case 'unRealisateur' : $ctrlRealisateur->unRealisateur($id);
-        break;
         // Affichage de tous les films d'un réalisateur.
         case 'realisateurFilm': $ctrlRealisateur->realisateurFilm($id);
+        break;
+        // realisateur->view form pour ajouter un réalisateur
+        case 'ajouterRealisateur' : $ctrlRealisateur->viewAjouterRealisateur();
+        break;
+        case 'addrealisateur' : $ctrlRealisateur->addRealisateur();
         break;
         // Affichage de toutes les catégories.
         case 'categories': $ctrlCategories->listCategories();
@@ -54,32 +53,19 @@ if(isset($_GET['action'])) {
         // Affichage de tous les acteurs.
         case 'acteurs' :  $ctrlActeurs->listActeurs();
         break;
-        //Affichage d'un seul acteur.
-        case 'unActeur' : $ctrlActeurs->listActeur($id);
-        break;
+        // Affiche tous films d'un acteur
         case 'acteurFilm' : $ctrlActeurs->acteurFilm($id);
         break;
         // Affichage d'un acteur est de son rôle.
         case 'acteurRole' : $ctrlRoles->listActeurRole($id);
         break;
-        // case 'acteursRole': $ctrlActeurs->ListActeursRoles($id);
-        break;
         // Affichage de tous les roles.
         case 'roles' : $ctrlRoles->listRoles();
-        break;
-        // Affichage de tous les casting.
-        case 'castings' : $ctrlCasting->listCasting();
         break;
         // Affichage de tous les acteurs ainsi que leur rôle dans un film.
         case 'castingFilm' : $ctrlCasting->listCastingFilm($id);
         break;
     }
-
-    
-    
-
-
-
 }else{
     // Si le case ne ce charge pas on retourne sur la homePage.
     return $ctrlHome->homePage();

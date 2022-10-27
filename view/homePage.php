@@ -18,7 +18,4 @@
     <li class="nav-item">
         <a class="nav-link active" href="index.php?action=roles">Role</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link active" href="index.php?action=castings">Casting</a>
-    </li>
 </nav>

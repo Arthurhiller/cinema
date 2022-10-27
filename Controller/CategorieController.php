@@ -15,7 +15,7 @@ class categorieController {
     public function listCategories() {
 
         $stmtAllCategories = $this->manager->findAll();
-        require "view/list/categories.php";
+        require "view/list/categorie/categories.php";
     }
 
     public function categorieFilm($id) {
@@ -26,7 +26,7 @@ class categorieController {
                             INNER JOIN film f
                             ON f.id_categorie = c.id_categorie
                             WHERE c.id_categorie = $id");
-        require "view/list/categorieFilm.php";
+        require "view/list/categorie/categorieFilm.php";
 
     }
 }
