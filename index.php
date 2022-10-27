@@ -42,7 +42,7 @@ if(isset($_GET['action'])) {
         // realisateur->view form pour ajouter un réalisateur
         case 'ajouterRealisateur' : $ctrlRealisateur->viewAjouterRealisateur();
         break;
-        case 'addrealisateur' : $ctrlRealisateur->addRealisateur();
+        case 'addRealisateur' : $ctrlRealisateur->addRealisateur();
         break;
         // Affichage de toutes les catégories.
         case 'categories': $ctrlCategories->listCategories();
