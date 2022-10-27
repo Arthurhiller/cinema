@@ -1,12 +1,9 @@
 <?php
 ob_clean();
 ?>
-<?php 
-    
 
-?>
 <p>Ajouter un realisateur</p>
-<form action="index.php?action=addrealisateur" method="POST">
+<form action="index.php?action=addRealisateur" method="post">
     <div class="form">
         <div class="form-groupe-md-5">
             <label for="">Nom</label>

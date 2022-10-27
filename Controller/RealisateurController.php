@@ -38,25 +38,31 @@ class RealisateurController {
 
 
     public function addRealisateur() {
-        if(!empty($_POST['submit'])) {
+        
+        if(isset($_POST['submit'])) {
 
-            die("succes");
             $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $date = filter_input(INPUT_POST, "date");
-        
+            // var_dump($_POST['submit']);
+            // die("succes");
             if($nom && $prenom && $sexe && $date)
             {
                 $sql = Connect::seConnecter();
-                $stmt = $sql->prepare("INSERT INTO (nom, prenom, sexe, date_naissance) VALUE (:nom, :prenom, :sexe, :dateDeNaissance)");
+                $stmt = $sql->prepare("INSERT INTO  realisateur (nom, prenom, sexe, date_naissance) VALUES (:nom, :prenom, :sexe, :date)");
                 $stmt->bindParam(':nom' , $nom);
                 $stmt->bindParam(':prenom', $prenom);
                 $stmt->bindParam(':sexe', $sexe);
-                $stmt->bindParam(':date_naissance' , $dateDeNaissance);
-                $stmt->execute();
+                $stmt->bindParam(':date_naissance' , $date);
+                $stmt->execute(array(
+                    ':nom' => $nom,
+                    ':prenom' => $prenom,
+                    'sexe' => $sexe,
+                    ':date' => $date
+                ));
             }
         }
-        // Mettre le require
+        echo "marche pas";
     }   
 }
