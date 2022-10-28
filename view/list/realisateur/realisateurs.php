@@ -18,6 +18,7 @@ ob_start();
                     <p>La date de naissance : <?= $realisateur['date_naissance'] ?></p>
                 </p>
                 <a href="index.php?action=realisateurFilm&id=<?= $realisateur['id_realisateur'] ?>" class="btn btn-primary">Filmographie</a>
+                <a href="index.php?action=deleteRealisateur&id=<?= $realisateur['id_realisateur'] ?>" class="btn btn-danger">Supprimer</a>
             </div>
         </div>
     </div>

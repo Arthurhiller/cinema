@@ -63,6 +63,16 @@ class RealisateurController {
                 ));
             }
         }
-        echo "marche pas";
-    }   
+        // require "view/list/realisateur/realisateurs.php";
+    }
+
+    public function deleteRealisateur($id) {
+        
+        $sql = Connect::seConnecter();
+        $stmt = $sql->prepare("DELETE FROM realisateur WHERE id_realisateur = :id");
+        $stmt->bindParam(':id' , $id);
+        $stmt->execute(array(
+            ':id' => $id
+        ));
+    }
 }
