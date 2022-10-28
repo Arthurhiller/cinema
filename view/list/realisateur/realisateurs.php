@@ -4,12 +4,11 @@ ob_start();
 
 <h2>Liste de tous les réalisateurs</h2>
 
-<a href="index.php?action=ajouterRealisateur">Ajouter un realisateur</a>
+<a href="index.php?action=ajouterRealisateur" class="btn btn-primary">Ajouter un realisateur</a>
 
 <div class="row">
     <?php foreach($stmtRealisateurs->fetchAll() as $realisateur): ?>
-    <div class="flex-wrap">
-        <div class="card" style="width: 18rem;">
+        <div class="card col-xl-4" style="width: 18rem;">
             <div class="card-body">
                 <h3 class="card-title"><?= $realisateur['nom'] ?></h3>
                 <h4 class="card-subtitle"><?= $realisateur['prenom'] ?></h4>
@@ -22,7 +21,6 @@ ob_start();
                 <a href="index.php?action=viewUpdateRealisateur&id=<?= $realisateur['id_realisateur'] ?>" class="btn btn-info">Editer</a>
             </div>
         </div>
-    </div>
     <?php endforeach; ?>
 </div>
 

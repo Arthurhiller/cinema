@@ -62,7 +62,7 @@ class categorieController {
         $stmt->execute(array(
             ':id' => $id
         ));
-
+        require "view/list/categorie/categories.php";
     }
 
     public function viewUpdateCategorie() {
