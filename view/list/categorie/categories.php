@@ -4,6 +4,8 @@ ob_start();
 
 <h2>Liste de toutes les catégories</h2>
 
+<a href="index.php?action=viewAddCategorie">Ajouter une catégorie</a>
+
 <div class="row">
     <?php foreach($stmtAllCategories->fetchAll() as $categorie): ?>
     <div class="flex-wrap">

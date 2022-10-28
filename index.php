@@ -56,6 +56,10 @@ if(isset($_GET['action'])) {
         // Affichage de tous les films par catégorie
         case 'categorieFilm' : $ctrlCategories->categorieFilm($id);
         break;
+        case 'viewAddCategorie' : $ctrlCategories->viewAddCategorie();
+        break;
+        case 'addCategorie' : $ctrlCategories->addCategorie();
+        break;
         // Affichage de tous les acteurs.
         case 'acteurs' :  $ctrlActeurs->listActeurs();
         break;

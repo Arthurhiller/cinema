@@ -29,4 +29,28 @@ class categorieController {
         require "view/list/categorie/categorieFilm.php";
 
     }
+
+    public function viewAddCategorie() {
+
+        require "view/list/categorie/ajouterCategorie.php";
+    }
+
+    public function addCategorie() {
+
+        if(isset($_POST['submit'])) {
+
+            $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            if($nom) {
+
+                $sql = Connect::seConnecter();
+                $stmt = $sql->prepare("INSERT INTO categorie (nom) VALUES (:nom) ");
+                $stmt->bindParam(':nom' , $nom);
+                $stmt->execute(array(
+                    ':nom' => $nom
+                ));
+            }
+        }
+
+    }
 }
