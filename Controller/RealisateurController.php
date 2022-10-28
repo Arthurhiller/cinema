@@ -75,4 +75,37 @@ class RealisateurController {
             ':id' => $id
         ));
     }
+
+    public function viewFormulaireUpdate() {
+
+        require "view/list/realisateur/updateRealisateur.php";
+    }
+
+    public function updateRealisateur($id) {
+        
+        if(isset($_POST['submit'])) {
+            
+            $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $date = filter_input(INPUT_POST, "date");
+            // && $prenom && $sexe && $date
+            if($nom && $prenom && $sexe && $date) {
+                
+                $sql = Connect::seConnecter();
+                $stmt = $sql->prepare("UPDATE realisateur SET nom =:nom, prenom =:prenom, sexe =:sexe, date_naissance=:date WHERE id_realisateur = $id");
+                $stmt->bindParam('nom' , $nom);
+                $stmt->bindParam('prenom' , $prenom);
+                $stmt->bindParam('sexe', $sexe);
+                $stmt->bindParam('date_naissance', $date);
+                $stmt->execute(array(
+                    ':nom' => $nom,
+                    ':prenom' => $prenom,
+                    ':sexe' => $sexe,
+                    ':date' => $date
+                ));
+            }
+            // pause 15minutes : 10h12
+       }
+    }
 }

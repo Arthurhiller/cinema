@@ -46,6 +46,10 @@ if(isset($_GET['action'])) {
         break;
         case 'deleteRealisateur' : $ctrlRealisateur->deleteRealisateur($id);
         break;
+        case 'viewUpdateRealisateur' : $ctrlRealisateur->viewFormulaireUpdate($id);
+        break;
+        case 'updateRealisateur' : $ctrlRealisateur->updateRealisateur($id);
+        break;
         // Affichage de toutes les catégories.
         case 'categories': $ctrlCategories->listCategories();
         break;
