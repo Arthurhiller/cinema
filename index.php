@@ -42,12 +42,16 @@ if(isset($_GET['action'])) {
         // realisateur->view form pour ajouter un réalisateur
         case 'ajouterRealisateur' : $ctrlRealisateur->viewAjouterRealisateur();
         break;
+        // Ajouter un realisateur
         case 'addRealisateur' : $ctrlRealisateur->addRealisateur();
         break;
+        // Supprimer un réalisateur
         case 'deleteRealisateur' : $ctrlRealisateur->deleteRealisateur($id);
         break;
+        // view vers le formulaire pour update un réalisateur
         case 'viewUpdateRealisateur' : $ctrlRealisateur->viewFormulaireUpdate($id);
         break;
+        // Modifier un réalisateur
         case 'updateRealisateur' : $ctrlRealisateur->updateRealisateur($id);
         break;
         // Affichage de toutes les catégories.
@@ -56,8 +60,10 @@ if(isset($_GET['action'])) {
         // Affichage de tous les films par catégorie
         case 'categorieFilm' : $ctrlCategories->categorieFilm($id);
         break;
+        // view vers le formulaire add catégorie
         case 'viewAddCategorie' : $ctrlCategories->viewAddCategorie();
         break;
+        // Ajouter une nouvelle catégorie
         case 'addCategorie' : $ctrlCategories->addCategorie();
         break;
         // Affichage de tous les acteurs.
