@@ -53,4 +53,38 @@ class categorieController {
         }
 
     }
+
+    public function deleteCategorie($id) {
+
+        $sql = Connect::seConnecter();
+        $stmt = $sql->prepare("DELETE FROM categorie WHERE id_categorie = :id");
+        $stmt->bindParam(':id' , $id);
+        $stmt->execute(array(
+            ':id' => $id
+        ));
+
+    }
+
+    public function viewUpdateCategorie() {
+
+        require "view/list/categorie/updateCategorie.php";
+    }
+
+    public function updateCategorie($id) {
+
+        if(isset($_POST['submit'])) {
+            // die('succes');
+            $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            
+            if($nom) {
+                
+                $sql = Connect::seConnecter();
+                $stmt = $sql->prepare("UPDATE categorie SET nom=:nom WHERE id_categorie = $id");
+                $stmt->bindParam(':nom' , $nom);
+                $stmt->execute(array(
+                    ':nom' => $nom
+                ));
+            }
+        }
+    }
 }

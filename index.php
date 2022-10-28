@@ -66,6 +66,13 @@ if(isset($_GET['action'])) {
         // Ajouter une nouvelle catégorie
         case 'addCategorie' : $ctrlCategories->addCategorie();
         break;
+        case 'viewUpdateCategorie' : $ctrlCategories->viewUpdateCategorie($id);
+        break;
+        case 'updateCategorie' : $ctrlCategories->updateCategorie($id);
+        break;
+        // Supprime une catégorie
+        case 'deleteCategorie' : $ctrlCategories->deleteCategorie($id);
+        break;
         // Affichage de tous les acteurs.
         case 'acteurs' :  $ctrlActeurs->listActeurs();
         break;
