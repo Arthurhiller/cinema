@@ -85,6 +85,20 @@ if(isset($_GET['action'])) {
         // Affichage de tous les roles.
         case 'roles' : $ctrlRoles->listRoles();
         break;
+        // View add role (formulaire)
+        case 'viewAddRole' : $ctrlRoles->viewAddRole();
+        break;
+        // add role function
+        case 'addRole' : $ctrlRoles->addRole();
+        break;
+        // delete role function
+        case 'deleteRole' : $ctrlRoles->deleteRole($id);
+        break;
+        // View update role
+        case 'viewUpdate' : $ctrlRoles->viewUpdate($id);
+        break;
+        case 'updateRole' : $ctrlRoles->updateRole($id);
+        break;
         // Affichage de tous les acteurs ainsi que leur rôle dans un film.
         case 'castingFilm' : $ctrlCasting->listCastingFilm($id);
         break;
