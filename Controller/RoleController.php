@@ -32,10 +32,5 @@ class RoleController {
         require "view/list/role/acteursRoles.php";
     }
 
-    // public function acteurRole($id) {
-
-    //     $new = new RoleManager();
-    //     $stmtActeurRole = $this->new->listActeurRole($id);
-    //     require "view/list/acteursRoles.php";
-    // }
+    
 }
