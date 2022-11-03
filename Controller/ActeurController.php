@@ -67,4 +67,46 @@ class ActeurController {
             }
         }
     }
+
+    public function deleteActeur($id) {
+
+        $sql = Connect::seConnecter();
+        $stmt = $sql->prepare("DELETE FROM acteur WHERE id_acteur = :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute(array(
+            ':id' => $id
+        ));
+    }
+
+    public function viewUpdateActeur($id) {
+
+        require "view/list/acteur/viewUpdateActeur.php";
+    }
+
+    public function updateActeur($id) {
+
+        if(isset($_POST['submit'])) {
+
+            $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_SPECIAL_CHARS);
+            $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $date = filter_input(INPUT_POST, "date", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            if($nom && $prenom && $sexe && $date) {
+
+                $sql = Connect::seConnecter();
+                $stmt = $sql->prepare("UPDATE acteur SET nom = :nom, prenom = :prenom, sexe = :sexe, date_naissance = :date WHERE id_acteur = $id");
+                $stmt->bindParam(':nom', $nom);
+                $stmt->bindParam(':prenom', $prenom);
+                $stmt->bindParam(':sexe', $sexe);
+                $stmt->bindParam('date', $date);
+                $stmt->execute(array(
+                    ':nom' => $nom,
+                    ':prenom' => $prenom,
+                    ':sexe' => $sexe,
+                    ':date' => $date
+                ));
+            }
+        }
+    }
 }

@@ -82,6 +82,14 @@ if(isset($_GET['action'])) {
         // ajouter un acteur
         case 'addActeur' : $ctrlActeurs->addActeur();
         break;
+        // Supprime un acteur
+        case 'deleteActeur' : $ctrlActeurs->deleteActeur($id);
+        break;
+        // Affichage de la page pour update un acteur
+        case 'viewUpdateActeur' : $ctrlActeurs->viewUpdateActeur($id);
+        break;
+        case 'updateActeur' : $ctrlActeurs->updateActeur($id);
+        break;
         // Affiche tous films d'un acteur
         case 'acteurFilm' : $ctrlActeurs->acteurFilm($id);
         break;
