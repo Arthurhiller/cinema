@@ -76,6 +76,12 @@ if(isset($_GET['action'])) {
         // Affichage de tous les acteurs.
         case 'acteurs' :  $ctrlActeurs->listActeurs();
         break;
+        // view add acteur
+        case 'viewAddActeur' : $ctrlActeurs->viewAddActeur();
+        break;
+        // ajouter un acteur
+        case 'addActeur' : $ctrlActeurs->addActeur();
+        break;
         // Affiche tous films d'un acteur
         case 'acteurFilm' : $ctrlActeurs->acteurFilm($id);
         break;

@@ -36,4 +36,35 @@ class ActeurController {
         require "view/list/acteur/acteurFilm.php";
     }
 
+    public function viewAddActeur() {
+
+        require "view/list/acteur/viewAddActeur.php";
+    }
+
+    public function addActeur() {
+
+        if(isset($_POST['submit'])) {
+
+            $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $date = filter_input(INPUT_POST, "date", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            if($nom && $prenom && $sexe && $date) {
+
+                $sql = Connect::seConnecter();
+                $stmt = $sql->prepare("INSERT INTO acteur (nom, prenom, sexe, date_naissance) VALUES (:nom, :prenom, :sexe, :date)");
+                $stmt->bindParam(':nom', $nom);
+                $stmt->bindParam(':prenom', $prenom);
+                $stmt->bindParam(':sexe', $sexe);
+                $stmt->bindParam('date', $date);
+                $stmt->execute(array(
+                    ':nom' => $nom,
+                    ':prenom' => $prenom,
+                    ':sexe' => $sexe,
+                    ':date' => $date
+                ));
+            }
+        }
+    }
 }

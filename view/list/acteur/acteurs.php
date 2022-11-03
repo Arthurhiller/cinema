@@ -3,6 +3,9 @@ ob_start();
 ?>
 
 <h2>Tous les acteurs</h2>
+
+<a href="index.php?action=viewAddActeur" class="btn btn-primary">Ajouter un acteur</a>
+
 <div class="row">
     <?php foreach($stmtListActeurs->fetchAll() as $acteur): ?>
         <div class="card col-xl-4" style="width: 18rem;">
