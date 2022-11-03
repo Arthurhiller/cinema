@@ -2,7 +2,6 @@
 ob_start()
 ?>
 <div class="row">
-    <div class="flex-wrap">
     <?php foreach($stmt->fetchAll() as $acteurRole): ?>
         <div class="card" style="width: 18rem;">
             <div class="card-body">
@@ -11,8 +10,7 @@ ob_start()
                 <p class="card-text">Le sexe de l'acteur est : <?= $acteurRole['sexe'] ?></p>
                 <p class="card-text">La date de naissance de l'acteur est : <?= $acteurRole['date_naissance'] ?></p>
             </div>
-        </div>   
-    </div>
+        </div>
     <?php endforeach; ?>
 </div>
 
