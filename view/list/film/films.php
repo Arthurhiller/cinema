@@ -9,6 +9,7 @@ ob_start();
 
 <h2>Liste des films</h2>
 
+<a href="index.php?action=viewAddFilm" class="btn btn-primary">Ajouter un film</a>
 
 <div class="row">
     <?php foreach($stmtAllFilms->fetchAll() as $film): ?>

@@ -24,4 +24,5 @@ class CastingController {
                             WHERE id_film = $id");
         require "view/list/casting/filmCasting.php";
     }
+
 }
