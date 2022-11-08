@@ -37,6 +37,12 @@ if(isset($_GET['action'])) {
         break;
         case 'addFilm' : $ctrlFilm->addFilm();
         break;
+        case 'deleteFilm' : $ctrlFilm->deleteFilm($id);
+        break;
+        case 'viewEditFilm' : $ctrlFilm->viewEditFilm();
+        break;
+        case 'editFilm' : $ctrlFilm->editFilm($id);
+        break;
         // Affichage view casting film
         case 'viewCastingFilm' : $ctrlFilm->viewCastingFilm();
         break;
@@ -123,6 +129,10 @@ if(isset($_GET['action'])) {
         break;
         // Affichage de tous les acteurs ainsi que leur rôle dans un film.
         case 'castingFilm' : $ctrlCasting->listCastingFilm($id);
+        break;
+        case 'viewAjouterCasting' : $ctrlCasting->viewAjouterCasting($id);
+        break;
+        case 'addCasting' : $ctrlCasting->addCasting($id);
         break;
     }
 }else{
