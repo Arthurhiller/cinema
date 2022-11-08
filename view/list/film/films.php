@@ -18,6 +18,8 @@ ob_start();
                 <h5 class="card-title text-muted text-truncate"><?= $film['titre'] ?></h5>
                 <p class="card-text text-muted text-truncate"><?= $film['synopsis'] ?></p>
                 <a href="index.php?action=castingFilm&id=<?= $film['id_film'] ?>" class="btn btn-primary">Voir le casting</a>
+                <a href="index.php?action=deleteFilm&id=<?= $film['id_film'] ?>" class="btn btn-danger">Supprimer</a>
+                <a href="index.php?action=viewEditFilm&id=<?= $film['id_film'] ?>" class="btn btn-success">Editer</a>
             </div>
         </div>
         <?php endforeach; ?>

@@ -18,7 +18,7 @@ ob_start();
                 </p>
                 <a href="index.php?action=realisateurFilm&id=<?= $realisateur['id_realisateur'] ?>" class="btn btn-primary">Filmographie</a>
                 <a href="index.php?action=deleteRealisateur&id=<?= $realisateur['id_realisateur'] ?>" class="btn btn-danger">Supprimer</a>
-                <a href="index.php?action=viewUpdateRealisateur&id=<?= $realisateur['id_realisateur'] ?>" class="btn btn-info">Editer</a>
+                <a href="index.php?action=viewUpdateRealisateur&id=<?= $realisateur['id_realisateur'] ?>" class="btn btn-success">Editer</a>
             </div>
         </div>
     <?php endforeach; ?>

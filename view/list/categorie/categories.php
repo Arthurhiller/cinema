@@ -12,7 +12,7 @@ ob_start();
             <div class="card-body">
                 <a href="index.php?action=categorieFilm&id=<?= $categorie['id_categorie'] ?>" class="btn btn-primary" role="button" aria-pressed="true"><?= $categorie['nom'] ?></a>
                 <a href="index.php?action=deleteCategorie&id=<?= $categorie['id_categorie'] ?>" class="btn btn-danger">Supprimer</a>
-                <a href="index.php?action=viewUpdateCategorie&id=<?= $categorie['id_categorie'] ?>" class="btn btn-info">Modifier</a>
+                <a href="index.php?action=viewUpdateCategorie&id=<?= $categorie['id_categorie'] ?>" class="btn btn-success">Modifier</a>
             </div>
         </div>
     <?php endforeach; ?>

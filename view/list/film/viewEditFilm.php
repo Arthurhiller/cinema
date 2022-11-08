@@ -2,9 +2,8 @@
 ob_start();
 ?>
 
-
-<p>Ajouter un film</p>
-<form action="index.php?action=addFilm" method="post">
+<p>Editer un film</p>
+<form action="index.php?action=editFilm&id=<?= $_GET['id'] ?>" method="post">
     <div class="form">
         <div class="form-groupe-md-5">
             <label for="">Titre</label>
@@ -26,7 +25,7 @@ ob_start();
     <button type="submit" name="submit" class="btn btn-primary">Ajouter</button>
 </form>
 
+
 <?php
 $contenu = ob_get_clean();
 require "./view/template.php";
-?>

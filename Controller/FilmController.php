@@ -43,7 +43,6 @@ class FilmController {
 
 
     public function addFilm() {
-
         if(isset($_POST['submit'])) {
 
             $titre = filter_input(INPUT_POST, "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -67,5 +66,51 @@ class FilmController {
                 ));
             }
         }
+    }
+
+
+    public function deleteFilm($id) {
+
+        $sql = Connect::seConnecter();
+        $stmt = $sql->prepare("DELETE FROM film WHERE id_film = :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute(array(
+            ':id' => $id
+        ));
+    }
+
+    public function viewEditFilm() {
+
+        require "view/list/film/viewEditFilm.php";
+    }
+
+    public function editFilm($id) {
+
+        if(isset($_POST['submit'])) {
+
+            $titre = filter_input(INPUT_POST, "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $date = filter_input(INPUT_POST, "date", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $synopsis = filter_input(INPUT_POST, "synopsis", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $duree = filter_input(INPUT_POST, "duree", FILTER_SANITIZE_NUMBER_INT);
+
+
+            if($titre && $date && $synopsis && $duree) {
+
+                $sql = Connect::seConnecter();
+                $stmt = $sql->prepare("UPDATE film SET titre=:titre, date_sortie=:date, synopsis=:synopsis, duree=:duree WHERE id_film = $id");
+                $stmt->bindParam(':titre' , $titre);
+                $stmt->bindParam(':date', $date);
+                $stmt->bindParam(':synopsis', $synopsis);
+                $stmt->bindParam('duree', $duree);
+                $stmt->execute(array(
+                    ':titre' => $titre,
+                    ':date' => $date,
+                    ':synopsis' => $synopsis,
+                    ':duree' => $duree,
+                ));
+            }
+
+        }
+
     }
 }

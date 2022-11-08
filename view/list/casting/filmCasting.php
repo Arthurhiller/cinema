@@ -2,6 +2,8 @@
 ob_start();
 ?>
 
+<a href="index.php?action=viewAjouterCasting&id=<?= $_GET['id'] ?>" class="btn btn-primary">Ajouter un acteur</a>
+
 <div class="row">
     <?php foreach($stmt->fetchAll() as $castingFilm): ?>
     <div class="flex-wrap">
