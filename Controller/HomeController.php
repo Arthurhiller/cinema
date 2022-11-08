@@ -1,7 +1,10 @@
 <?php
 
 namespace Controller;
-require_once "view/homePage.php";
+
+use Model\Connect;
+
+// require_once "view/homePage.php";
 
 /**
  * Définition PHP Data Objects (PDO) :
@@ -65,7 +68,11 @@ class HomeController {
 
     public function homePage() {
         
-        return "view/homePage.php";
+        $sql = Connect::seConnecter();
+        $stmtFilmHomes = $sql->query("SELECT titre, date_sortie, synopsis, duree FROM film");
+        $stmtFilmHomes->execute();
+        require "view/homePage.php";
 
     }
+
 }
